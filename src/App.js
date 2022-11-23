@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import validateEmail from './utils/helpers';
 
 function App() {
   const [name, setName] = useState('');
@@ -12,9 +13,9 @@ function App() {
     const inputType = target.name;
     const inputValue = target.value;
 
-    if (inputType === "name") {
+    if (inputType === 'name') {
       setName(inputValue);
-    } else if (inputType === "email") {
+    } else if (inputType === 'email') {
       setEmail(inputValue);
     } else {
       setMessage(inputValue);
@@ -25,17 +26,22 @@ function App() {
     const { target } = e;
     const inputType = target.name;
     const inputValue = target.value;
-    if (inputType === "name") {
+    if (inputType === 'name') {
       if (!inputValue.length) {
-        setErrorMessage("The name field is required");
+        setErrorMessage('The name field is required');
       }
     } else if (inputType === 'email') {
+      if (!validateEmail(inputValue)) {
+        setErrorMessage('Email is invalid');
+      } else {
+        setErrorMessage('');
+      }
       if (!inputValue.length) {
-        setErrorMessage("The email field is required");
+        setErrorMessage('The email field is required');
       }
     } else {
       if (!inputValue.length) {
-        setErrorMessage("The message field is required");
+        setErrorMessage('The message field is required');
       }
     }
   };
