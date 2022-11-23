@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './App.css';
 import validateEmail from './utils/helpers';
+
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 
 function App() {
   const [name, setName] = useState('');
@@ -52,12 +57,32 @@ function App() {
     }
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset();
+
+    if (!validateEmail(email)) {
+      setErrorMessage('Email is invalid');
+      return;
+    }
+    setName('');
+    setEmail('');
+    setMessage('');
+    setErrorMessage('');
+  };
+
   return (
     <div className='App'>
       <h2>
         Contact Us
       </h2>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label>
           Name:
           <input
