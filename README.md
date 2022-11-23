@@ -27,7 +27,7 @@ npm i
 
 This will install the modules necessary for the app to function properly.
 
-You will also need to create a `.env` file in the project root and add the following code:
+You will also need to create a `.env` file in the project root and add the following code, and add `.env` to the `.gitignore` file:
 
 ```
 REACT_APP_SERVICE_ID='add your emailjs service id'
