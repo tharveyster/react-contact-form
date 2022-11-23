@@ -7,6 +7,20 @@ function App() {
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const handleInputChange = (e) => {
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
+
+    if (inputType === "name") {
+      setName(inputValue);
+    } else if (inputType === "email") {
+      setEmail(inputValue);
+    } else {
+      setMessage(inputValue);
+    }
+  }
+
   return (
     <div className='App'>
       <form>
@@ -16,6 +30,7 @@ function App() {
             type='text'
             name='name'
             value={name}
+            onChange={handleInputChange}
             placeholder='Name'
             required
           />
@@ -26,6 +41,7 @@ function App() {
             type='email'
             name='email'
             value={email}
+            onChange={handleInputChange}
             placeholder='Email'
             required
           />
@@ -36,6 +52,7 @@ function App() {
             type='text'
             name='message'
             value={message}
+            onChange={handleInputChange}
             placeholder='Message'
             required
           />
