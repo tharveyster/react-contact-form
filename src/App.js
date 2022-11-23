@@ -12,6 +12,7 @@ function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -62,10 +63,10 @@ function App() {
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
-        alert('Your message was sent');
+        setSuccessMessage('Your message was sent');
       }, (error) => {
         console.log(error.text);
-        alert('An error has occurred and your message was not sent');
+        setErrorMessage('An error has occurred and your message was not sent');
       });
     e.target.reset();
 
@@ -127,6 +128,11 @@ function App() {
         {errorMessage && (
           <div>
             <p className='error'>{errorMessage}</p>
+          </div>
+        )}
+        {successMessage && (
+          <div>
+            <p className='success'>{successMessage}</p>
           </div>
         )}
         <button className='btn' type='submit'>

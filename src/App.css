@@ -34,10 +34,17 @@ textarea {
   padding: 10px;
 }
 
-.error {
+.error, .success {
   font-weight: 800;
-  color: #bb0000;
   margin-bottom: 20px;
+}
+
+.error {
+  color: #bb0000;
+}
+
+.success {
+  color: #00bb00;
 }
 
 .btn {
