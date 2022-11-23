@@ -29,6 +29,8 @@ function App() {
     if (inputType === 'name') {
       if (!inputValue.length) {
         setErrorMessage('The name field is required');
+      } else {
+        setErrorMessage('');
       }
     } else if (inputType === 'email') {
       if (!validateEmail(inputValue)) {
@@ -38,20 +40,28 @@ function App() {
       }
       if (!inputValue.length) {
         setErrorMessage('The email field is required');
+      } else {
+        setErrorMessage('');
       }
     } else {
       if (!inputValue.length) {
         setErrorMessage('The message field is required');
+      } else {
+        setErrorMessage('');
       }
     }
   };
 
   return (
     <div className='App'>
+      <h2>
+        Contact Us
+      </h2>
       <form>
         <label>
           Name:
           <input
+            className='form-field'
             type='text'
             name='name'
             value={name}
@@ -64,6 +74,7 @@ function App() {
         <label>
           Email:
           <input
+            className='form-field'
             type='email'
             name='email'
             value={email}
@@ -76,6 +87,7 @@ function App() {
         <label>
           Message:
           <textarea
+            className='form-field'
             type='text'
             name='message'
             value={message}
@@ -87,10 +99,10 @@ function App() {
         </label>
         {errorMessage && (
           <div>
-            <p>{errorMessage}</p>
+            <p className='error'>{errorMessage}</p>
           </div>
         )}
-        <button type='submit'>
+        <button className='btn' type='submit'>
           Submit
         </button>
       </form>
