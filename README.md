@@ -3,6 +3,8 @@
 ## Description
 This project is a contact form built with React. It sends emails with EmailJS instead of needing a back end. EmailJS is a third-party service that allows you to send up to 200 emails per month for free.
 
+![React contact form using EmailJS](./src/images/contact-form.png)
+
 ## Setting Up EmailJS
 First go to <https://dashboard.emailjs.com/sign-up> and create a free account.
 
@@ -43,8 +45,6 @@ npm start
 ```
 
 This will launch the app and open a new browser tab.
-
-![React contact form using EmailJS](./src/images/contact-form.png)
 
 You can then test it by filling out the form and submitting it.
 
