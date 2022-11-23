@@ -12,6 +12,15 @@ Once your account is created, click on the **Email Services** link on the naviga
 Then go to the **Email Templates** link and click **Create New Template**. Update the template to contain the information and styling you would like to receive in your emails. The items in double curly brackets (`{{}}`) should match the variables from your React app code  (e.g., {{name}}, {{email}}, {{message}}).
 ![Configure your email template](./src/images/emailjs-template.png)
 
+Make sure that the **To Email** is set to the address where you would like to receive your emails. It should be the same address that you used when you selected and configured the email service. When done modifying the template, click on **Save**.
+
+## Creating the App
+First clone or fork the repo, use the terminal to navigate to the folder that was created, and type:
+
+`npm i`
+
+This will install the modules necessary for the app to function properly.
+
 ## More info pending...
 
 ## Contact Info
