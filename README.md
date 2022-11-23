@@ -33,7 +33,7 @@ REACT_APP_TEMPLATE_ID='add your emailjs template id'
 REACT_APP_PUBLIC_KEY='add your emailjs public key'
 ```
 
-These ids can be found on the EmailJS website. The service id is shown on the **Email Services** page, the template id is shown on the **Email Templates** page, and the public key in on the **Account** page which you access by clicking on your name in the top right corner.
+Replace the text in quotes with your ids. These ids can be found on the EmailJS website. The service id is shown on the **Email Services** page, the template id is shown on the **Email Templates** page, and the public key in on the **Account** page which you access by clicking on your name in the top right corner.
 
 ## Launching the App
 Using the terminal type:

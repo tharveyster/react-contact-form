@@ -62,8 +62,10 @@ function App() {
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
+        alert('Your message was sent');
       }, (error) => {
         console.log(error.text);
+        alert('An error has occurred and your message was not sent');
       });
     e.target.reset();
 
