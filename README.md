@@ -49,7 +49,7 @@ This will launch the app and open a new browser tab.
 You can then test it by filling out the form and submitting it.
 
 ## Contact Info
-Email: todd@theharveysplace.com
+Email: todd@weloveeats.com
 
 ## License
 Copyright (c) 2021 Todd Harvey
